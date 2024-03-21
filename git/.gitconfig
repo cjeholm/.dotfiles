@@ -1,0 +1,9 @@
+[user]
+	email = 59372304+cjeholm@users.noreply.github.com
+	name = Conny Holm
+[color]
+	ui = auto
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
