@@ -13,5 +13,7 @@ alias ls=eza
 alias wifi=nmtui
 alias tree='eza -la --tree --git --ignore-glob .git'
 alias dng='WINEPREFIX="$HOME/wine-dng" wine "$HOME/wine-dng/drive_c/Program Files/Adobe/Adobe DNG Converter/Adobe DNG Converter.exe"'
+alias nv='steam-run nvim'
+alias so='source ~/.config/fish/config.fish'
 
 starship init fish | source
