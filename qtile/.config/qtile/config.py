@@ -75,7 +75,7 @@ keys = [
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod, "shift"], "s", lazy.spawn("spectacle --activewindow"), desc="Screenshot window"),
     Key([mod, "control"], "s", lazy.spawn("spectacle --current"), desc="Screenshot screen"),
-    Key([mod], "Escape", lazy.spawn("i3lock -c 111111 -t -i /home/conny/.config/qtile/fjällräven.png"), desc="Lock screen"),
+    Key([mod], "Escape", lazy.spawn("i3lock -c 111111 -t -i /home/conny/.config/qtile/fräv-3840x2557.png"), desc="Lock screen"),
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
@@ -176,7 +176,7 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        wallpaper="/home/conny/.config/qtile/fjällräven.png",
+        wallpaper="/home/conny/.config/qtile/fräv-3840x2557.png",
         wallpaper_mode="fill",
         bottom=bar.Bar(
             [
@@ -198,9 +198,10 @@ screens = [
                 # widget.Backlight(),
                 widget.Volume(fmt='Vol {}'),
                 widget.TextBox("\U00002022", name="Unicide Dot"),
-                # widget.Battery(fmt="Bat {}", discharge_char="\U00002193", charge_char="\U00002191"),
-                # widget.TextBox("\U00002022", name="Unicide Dot"),
-                # widget.Wlan(interface="wlp1s0"),
+                widget.Battery(fmt="Bat {}", discharge_char="\U00002193", charge_char="\U00002191"),
+                widget.TextBox("\U00002022", name="Unicide Dot"),
+                widget.Wlan(interface="wlp1s0"),
+                widget.TextBox("🐹", name="Hamster"),
                 # widget.TextBox("\U00002022", name="Unicide Dot"),
                 widget.Clock(format="%Y-%m-%d %a %H:%M %p"),
                 widget.QuickExit(default_text='[logout]'),
