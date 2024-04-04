@@ -574,6 +574,7 @@ cmp.setup {
 vim.cmd.colorscheme('darcula-solid')
 
 -- pylsp config.
+-- https://github.com/python-lsp/python-lsp-server/blob/develop/CONFIGURATION.md
 require'lspconfig'.pylsp.setup{
   settings = {
     pylsp = {

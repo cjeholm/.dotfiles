@@ -10,8 +10,7 @@
  */
 * {
   spacing: 2;
-  font: "Source Code Pro 13";
-  font: "Iosevka Medium Extended 24";
+  font: "Iosevka NFM Medium 32";
 }
 element-icon {
     size: 3.65ch ;
