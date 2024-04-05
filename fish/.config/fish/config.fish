@@ -18,4 +18,7 @@ alias tree='eza --tree --icons --group-directories-first'
 alias treell='eza -la --tree --git --ignore-glob .git'
 alias ll='eza -la'
 
+# copy path
+alias xc='pwd | xsel -ib'
+
 starship init fish | source
