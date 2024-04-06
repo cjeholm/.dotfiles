@@ -21,4 +21,9 @@ alias ll='eza -la'
 # copy path
 alias xc='pwd | xsel -ib'
 
+# Git
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+
 starship init fish | source
