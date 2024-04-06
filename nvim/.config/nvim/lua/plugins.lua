@@ -2,7 +2,6 @@
 return {
   { "rktjmp/lush.nvim"},
   { 'nvim-lua/plenary.nvim'},
-  { "nvim-tree/nvim-web-devicons", opts = {}  },
-  --  { "folke/which-key.nvim", opts = {}  },
-  -- { "folke/neodev.nvim", opts = {} },
+  { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }, opts = {} },
+  { "nvim-tree/nvim-web-devicons", opts = {} },
 }
