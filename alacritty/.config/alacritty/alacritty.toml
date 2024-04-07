@@ -2,8 +2,9 @@ shell = "fish"
 
 [font]
 # normal = { family = "Iosevka NFM Medium", style = "Regular"}
-normal = { family = "0xProto Nerd FontMono", style = "Regular"}
-size = 24
+# normal = { family = "0xProto Nerd FontMono", style = "Regular"}
+normal = { family = "BlexMono Nerd Font Mono", style = "Regular"}
+size = 25
 
 [window]
 padding = { x = 8, y = 8 }

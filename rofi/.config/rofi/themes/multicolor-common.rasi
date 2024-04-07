@@ -10,7 +10,7 @@
  */
 * {
   spacing: 2;
-  font: "0xProto Nerd Font 30";
+  font: "BlexMono Nerd Font 28";
 }
 element-icon {
     size: 3.65ch ;

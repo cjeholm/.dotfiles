@@ -167,7 +167,8 @@ layouts = [
 
 widget_defaults = dict(
     # font="Iosevka NFM Medium",
-    font="0xProto Nerd Font Mono",
+    # font="0xProto Nerd Font Mono",
+    font="BlexMono Nerd Font Mono",
     fontsize=32,
     padding=16,
     foreground="#aaa",
