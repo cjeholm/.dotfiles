@@ -4,11 +4,14 @@
 --
 -- By Conny Holm 2024
 --
+-- Made for NixOs. Install LSP, linter and other
+-- binary packages with nix. Mason will not work
+-- on NixOs and is excluded from this configuration.
 
 
 -- PACKAGE MANAGER
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
+if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git",
     "clone",
@@ -23,7 +26,6 @@ vim.opt.rtp:prepend(lazypath)
 
 -- LOAD OPTIONS
 require("vim-options")
-require("lsp-options")
 
 
 -- LOAD LAZY
