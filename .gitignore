@@ -1,3 +1,4 @@
 *.png
 lazy-lock.json
 *.old
+.luarc.json
