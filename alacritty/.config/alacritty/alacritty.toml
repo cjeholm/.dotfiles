@@ -27,8 +27,9 @@ padding = { x = 8, y = 8 }
 
   # Bright colors
 [colors.bright]
-    # black = '0xffc66d'
-    black = '0x505050'
+  # black = '0xffc66d'
+  # black = '0x505050'
+    black = '0x606060'
     red = '0xcb3626'
     green = '0x5a734c'
     yellow = '0xb1682b'
