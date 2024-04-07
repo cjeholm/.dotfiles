@@ -23,6 +23,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- LOAD OPTIONS
 require("vim-options")
+require("lsp-options")
 
 
 -- LOAD LAZY

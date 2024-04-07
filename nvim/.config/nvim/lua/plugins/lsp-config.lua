@@ -3,7 +3,7 @@ return {
 
   config = function()
     local lspconfig = require("lspconfig")
---    lspconfig.lua-lsp.setup({})
+    lspconfig.lua_ls.setup({})
     lspconfig.pylsp.setup({})
   end
 }
