@@ -9,10 +9,17 @@ Run install.sh for automatic setup. Existing config files will not be overwritte
 
 #### Alacritty
 - Darcula color theme
-- Iosevka font
-- zsh
+- 0xProto font
+- fish
 
 #### rofi
 - Minimal
 - Darcula color theme
-- Iosevka font
+- 0xProto font
+
+#### neovim
+- Darcula color theme
+- Lazy.nvim for managing plugins
+- Python LSP and linting
+- Neotree
+- treesitter
