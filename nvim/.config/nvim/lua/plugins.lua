@@ -6,5 +6,6 @@ return {
   { "nvim-tree/nvim-web-devicons", opts = {} },
   { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {indent={char="┆"}} },
   { 'lewis6991/gitsigns.nvim', opts = {} },
+  { 'folke/neodev.nvim', opts = {} },
 
 }
