@@ -1,0 +1,37 @@
+shell = "fish"
+
+[font]
+normal = { family = "0xProto Nerd Font Mono", style = "Regular"}
+size = 10 
+
+[window]
+padding = { x = 4, y = 4 }
+
+[colors.primary]
+# Colors (Darcula)
+  # Default colors
+    background = '0x232323'
+    foreground = '0xbbbbbb'
+
+  # Normal colors
+[colors.normal]
+    black = '0x323232'
+    red = '0xda4939'
+    green = '0x6a8759'
+    yellow = '0xcc7832'
+    blue = '0x6897bb'
+    magenta = '0xae8abe'
+    cyan = '0x299999'
+    white = '0xffffff'
+
+  # Bright colors
+[colors.bright]
+    # black = '0xffc66d'
+    black = '0x505050'
+    red = '0xcb3626'
+    green = '0x5a734c'
+    yellow = '0xb1682b'
+    blue = '0x5187b0'
+    magenta = '0x9f74b2'
+    cyan = '0x227e7e'
+    white = '0xdddddd'
