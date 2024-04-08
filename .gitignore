@@ -1,4 +1,5 @@
 *.png
 lazy-lock.json
 *.old
-.luarc.json
+*.luarc.json
+*.pyc
