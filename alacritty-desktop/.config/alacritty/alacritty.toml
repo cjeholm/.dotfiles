@@ -1,8 +1,7 @@
 shell = "fish"
 
 [font]
-# normal = { family = "0xProto Nerd Font Mono", style = "Regular"}
-normal = { family = "BlexMono Nerd Font Mono", style = "Regular"}
+normal = { family = "0xProto Nerd Font Mono", style = "Regular"}
 size = 10 
 
 [window]
