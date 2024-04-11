@@ -198,6 +198,8 @@ screens = [
                 # widget.Backlight(),
                 widget.Volume(fmt='Vol {}'),
                 widget.TextBox("\U00002022", name="Unicide Dot"),
+                widget.Bluetooth(interface="hci0"),
+                widget.TextBox("\U00002022", name="Unicide Dot"),
                 # widget.Battery(fmt="Bat {}", discharge_char="\U00002193", charge_char="\U00002191"),
                 # widget.TextBox("\U00002022", name="Unicide Dot"),
                 # widget.Wlan(interface="wlp1s0"),
