@@ -202,6 +202,8 @@ screens = [
                 widget.Battery(fmt="Bat {}", discharge_char="\U00002193", charge_char="\U00002191"),
                 widget.TextBox("\U00002022", name="Unicide Dot"),
                 widget.Wlan(interface="wlp1s0"),
+                widget.TextBox("\U00002022", name="Unicide Dot"),
+                widget.Bluetooth(interface="hci0"),
                 widget.TextBox("🐹", name="Hamster"),
                 # widget.TextBox("\U00002022", name="Unicide Dot"),
                 widget.Clock(format="%Y-%m-%d %a %H:%M %p"),
