@@ -51,9 +51,9 @@ return {
             print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
           end, { desc = "List workspace folders" })
           vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, { desc = "Go to type definition" })
-          vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, { desc = "Rename symbol (all refs)" })
-          vim.keymap.set({'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, { desc = "Code action" })
-          vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = "List references" })
+          vim.keymap.set('n', '<space>r', vim.lsp.buf.rename, { desc = "Rename symbol (all refs)" })
+          vim.keymap.set({'n', 'v' }, '<space>a', vim.lsp.buf.code_action, { desc = "Code action" })
+          vim.keymap.set('n', 'gl', vim.lsp.buf.references, { desc = "List references" })
           vim.keymap.set('n', '<space>f', function()
             vim.lsp.buf.format { async = true }
           end, { desc = "Format" })
