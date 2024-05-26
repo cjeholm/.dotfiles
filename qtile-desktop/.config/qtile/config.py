@@ -176,7 +176,7 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        wallpaper="/home/conny/.config/qtile/fjällräven.png",
+        wallpaper="/home/conny/.config/qtile/nika1_3440x1440.png",
         wallpaper_mode="fill",
         bottom=bar.Bar(
             [
