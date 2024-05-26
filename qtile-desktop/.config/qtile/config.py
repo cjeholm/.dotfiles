@@ -74,7 +74,7 @@ keys = [
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod, "shift"], "s", lazy.spawn("spectacle --activewindow"), desc="Screenshot window"),
     Key([mod, "control"], "s", lazy.spawn("spectacle --current"), desc="Screenshot screen"),
-    Key([mod], "Escape", lazy.spawn("i3lock -c 111111 -t -i /home/conny/.config/qtile/fjällräven.png"), desc="Lock screen"),
+    Key([mod], "Escape", lazy.spawn("i3lock -c 111111 -t -i /home/conny/.config/qtile/nika1_3440x1440.png"), desc="Lock screen"),
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
