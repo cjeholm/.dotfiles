@@ -73,8 +73,8 @@ keys = [
         desc="Toggle between split and unsplit sides of stack",
     ),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod, "shift"], "s", lazy.spawn("spectacle --activewindow"), desc="Screenshot window"),
-    Key([mod, "control"], "s", lazy.spawn("spectacle --current"), desc="Screenshot screen"),
+    Key([mod, "shift"], "s", lazy.spawn("myscrot --focused"), desc="Screenshot window"),
+    Key([mod, "control"], "s", lazy.spawn("myscrot"), desc="Screenshot screen"),
     Key([mod], "Escape", lazy.spawn("i3lock -c 111111 -t -i /home/conny/.config/qtile/fräv-3840x2557.png"), desc="Lock screen"),
 
     # Toggle between different layouts as defined below
