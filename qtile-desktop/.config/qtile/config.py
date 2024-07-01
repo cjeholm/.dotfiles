@@ -72,8 +72,8 @@ keys = [
         desc="Toggle between split and unsplit sides of stack",
     ),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod, "shift"], "s", lazy.spawn("spectacle --activewindow"), desc="Screenshot window"),
-    Key([mod, "control"], "s", lazy.spawn("spectacle --current"), desc="Screenshot screen"),
+    Key([mod, "shift"], "s", lazy.spawn("scrot-window"), desc="Screenshot window"),
+    Key([mod, "control"], "s", lazy.spawn("scrot-screen"), desc="Screenshot screen"),
     Key([mod], "Escape", lazy.spawn("lock-starlight -c 111111 -t -i /home/conny/.config/qtile/hissing123_3440x1440.png"), desc="Lock screen"),
     # Key([mod], "Escape", lazy.spawn("i3lock -c 111111 -t -i /home/conny/.config/qtile/nika1_3440x1440.png"), desc="Lock screen"),
 
