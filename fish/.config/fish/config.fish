@@ -4,7 +4,6 @@ end
 
 export MANPAGER="nvim +Man!"
 
-
 alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 # alias neofetch='neofetch --ascii ~/.config/neofetch/pentagram.txt'
 alias neofetch='env SHELL=fish neofetch'
