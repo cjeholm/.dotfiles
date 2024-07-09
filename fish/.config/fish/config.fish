@@ -25,8 +25,9 @@ alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 
-# scrot (screenshot utility)
-# moving this to a nix generated script
-# alias myscrot='scrot ~/Pictures/screenshots/%Y-%m-%d_%H%M%S.png'
+# nix-your-shell stuff
+if command -q nix-your-shell
+  nix-your-shell fish | source
+end
 
 starship init fish | source

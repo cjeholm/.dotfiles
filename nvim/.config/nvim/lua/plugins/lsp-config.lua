@@ -57,9 +57,9 @@ return {
           vim.keymap.set('n', '<space>r', vim.lsp.buf.rename, { desc = "Rename symbol (all refs)" })
           vim.keymap.set({'n', 'v' }, '<space>a', vim.lsp.buf.code_action, { desc = "Code action" })
           vim.keymap.set('n', 'gl', vim.lsp.buf.references, { desc = "List references" })
-          vim.keymap.set('n', '<space>f', function()
-            vim.lsp.buf.format { async = true }
-          end, { desc = "Format" })
+          -- vim.keymap.set('n', '<space>f', function()
+          --   vim.lsp.buf.format { async = true }
+          -- end, { desc = "Format" })
         end,
       })
     end,

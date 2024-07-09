@@ -47,6 +47,9 @@ keys = [
 
     Key([mod, "control"], "Tab", lazy.spawn("rofi -show window")),
 
+    # Toggle bar
+    Key([mod], "b", lazy.hide_show_bar(), desc="Toggles the bar"),
+
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
     Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
