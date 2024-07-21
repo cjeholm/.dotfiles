@@ -100,9 +100,9 @@ keys = [
 
 
     # Sound
-    Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
-    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 0 sset Master 5- unmute")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 5+ unmute")),
+    Key([], "XF86AudioMute", lazy.spawn("pamixer -t")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("pamixer -d 10")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("pamixer -i 10")),
 ]
 
 # Add key bindings to switch VTs in Wayland.
@@ -200,7 +200,7 @@ screens = [
                 # widget.StatusNotifier(),
                 widget.Systray(),
                 # widget.Backlight(),
-                widget.Volume(fmt='Vol {}'),
+                widget.PulseVolume(fmt='Vol {}'),
                 widget.TextBox("\U00002022", name="Unicide Dot"),
                 widget.Bluetooth(interface="hci0"),
                 widget.TextBox("\U00002022", name="Unicide Dot"),
