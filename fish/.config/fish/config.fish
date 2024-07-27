@@ -6,7 +6,7 @@ export MANPAGER="nvim +Man!"
 
 alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 # alias neofetch='neofetch --ascii ~/.config/neofetch/pentagram.txt'
-alias neofetch='env SHELL=fish neofetch'
+alias neofetch='fastfetch'
 alias wifi=nmtui
 alias dng='WINEPREFIX="$HOME/wine-dng" wine "$HOME/wine-dng/drive_c/Program Files/Adobe/Adobe DNG Converter/Adobe DNG Converter.exe"'
 alias nv='steam-run nvim'
@@ -24,10 +24,5 @@ alias xc='pwd | xsel -ib'
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
-
-# nix-your-shell stuff
-if command -q nix-your-shell
-  nix-your-shell fish | source
-end
 
 starship init fish | source
