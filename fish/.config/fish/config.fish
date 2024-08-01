@@ -1,3 +1,9 @@
+function fish_greeting
+    echo Welcome to ROBCO Industries \(TM\) Termlink
+    echo The time is (set_color yellow; date +%T;set_color normal) and this machine is called $hostname
+end
+
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
