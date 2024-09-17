@@ -32,14 +32,11 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 
 
-def paste_date():
+def set_date_to_clipboard(foo):
     # Get today's date in the desired format (YYYY-MM-DD_)
     today_date = datetime.datetime.now().strftime("%Y-%m-%d_")
     # Copy the date to the clipboard using xsel
-    os.system(f"echo '{today_date}' | xsel -ib")
-    # Simulate the paste action using xdotool
-    os.system("xdotool key ctrl+v")
-    return
+    os.system(f"echo -n '{today_date}' | xsel -ib")
 
 
 def read_sek_kwh_file():
@@ -70,7 +67,7 @@ keys = [
     Key([mod], "b", lazy.hide_show_bar(), desc="Toggles the bar"),
 
     # Paste todays date
-    Key([mod], "d", lazy.function(paste_date), desc="Paste current date"),
+    Key([mod], "d", lazy.function(set_date_to_clipboard), desc="Set todays date to clipboard"),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
