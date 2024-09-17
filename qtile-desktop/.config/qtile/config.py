@@ -24,13 +24,15 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import subprocess
+import datetime
+
 from libqtile import bar, layout, qtile, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
-
 
 def read_sek_kwh_file():
+# Reads the current kwh price from file
     try:
         with open("/var/tmp/sek_kwh.txt", "r") as f:
             return (f.read().strip() + " SEK/kWh")  # Read and return the file contents
@@ -39,9 +41,7 @@ def read_sek_kwh_file():
 
 
 mod = "mod4"
-# terminal = guess_terminal()
 terminal = "alacritty"
-# terminal = "konsole"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -57,6 +57,9 @@ keys = [
 
     # Toggle bar
     Key([mod], "b", lazy.hide_show_bar(), desc="Toggles the bar"),
+
+    # Paste todays date
+    Key([mod], "d", subprocess.run(["echo", "test", "|", "xsel", "-ib"], shell=True, check=False)),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
