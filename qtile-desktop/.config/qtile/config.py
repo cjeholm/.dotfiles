@@ -24,12 +24,23 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import subprocess
+import os
 import datetime
 
 from libqtile import bar, layout, qtile, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
+
+
+def paste_date():
+    # Get today's date in the desired format (YYYY-MM-DD_)
+    today_date = datetime.datetime.now().strftime("%Y-%m-%d_")
+    # Copy the date to the clipboard using xsel
+    os.system(f"echo '{today_date}' | xsel -ib")
+    # Simulate the paste action using xdotool
+    os.system("xdotool key ctrl+v")
+    return
+
 
 def read_sek_kwh_file():
 # Reads the current kwh price from file
@@ -59,7 +70,7 @@ keys = [
     Key([mod], "b", lazy.hide_show_bar(), desc="Toggles the bar"),
 
     # Paste todays date
-    Key([mod], "d", subprocess.run(["echo", "test", "|", "xsel", "-ib"], shell=True, check=False)),
+    Key([mod], "d", lazy.function(paste_date), desc="Paste current date"),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
@@ -96,6 +107,7 @@ keys = [
     Key([mod, "shift"], "t", lazy.function(lambda qtile: qtile.current_window.cmd_set_size_floating(1920, 1080)), desc="Set specific size"),
 
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
+    Key([mod, "mod1"], "r", lazy.restart(), desc="Restart qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
 
     # App launcher
