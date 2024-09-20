@@ -42,7 +42,7 @@ def set_date_to_clipboard(foo):
 def read_sek_kwh_file():
 # Reads the current kwh price from file
     try:
-        with open("/var/tmp/sek_kwh.txt", "r") as f:
+        with open("/tmp/sek_kwh.txt", "r") as f:
             return (f.read().strip() + " SEK/kWh")  # Read and return the file contents
     except FileNotFoundError:
         return "No kWh price"  # Handle case when file doesn't exist yet
