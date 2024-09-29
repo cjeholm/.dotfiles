@@ -149,7 +149,7 @@ for i in groups:
             Key(
                 [mod, "shift"],
                 i.name,
-                lazy.window.togroup(i.name, switch_group=True),
+                lazy.window.togroup(i.name, switch_group=False),
                 desc="Switch to & move focused window to group {}".format(i.name),
             ),
             # Or, use below if you prefer not to switch to that group.
@@ -160,11 +160,11 @@ for i in groups:
     )
 
 layout_defaults = dict(
-    border_focus=["#bbb"],
+    border_focus=["#888"],
     border_normal=["#111", "#222"],
     border_focus_stack=["#ddd"],
     border_width=2,
-    margin=0
+    margin=40
 )
 
 layouts = [
@@ -194,7 +194,8 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        wallpaper="/home/conny/.config/qtile/nika1_3440x1440.png",
+        wallpaper="/home/conny/.config/qtile/tiles2.png",
+        # wallpaper="/home/conny/.config/qtile/nika1_3440x1440.png",
         wallpaper_mode="fill",
         bottom=bar.Bar(
             [
@@ -242,13 +243,6 @@ screens = [
         # This variable is set to None (no cap) by default, but you can set it to 60 to indicate that you limit it to 60 events per second
         # x11_drag_polling_rate = 60,
     ),
-
-
-    Screen(
-        wallpaper="/home/conny/.config/qtile/fjällräven.png",
-        wallpaper_mode="fill",
-    ),
-
 
 ]
 
