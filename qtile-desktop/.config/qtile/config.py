@@ -28,7 +28,7 @@ import os
 import datetime
 
 from libqtile import bar, layout, qtile, widget
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown
 from libqtile.lazy import lazy
 
 
@@ -117,6 +117,11 @@ keys = [
     Key([], "XF86AudioMute", lazy.spawn("pamixer -t")),
     Key([], "XF86AudioLowerVolume", lazy.spawn("pamixer -d 10")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("pamixer -i 10")),
+
+    # Scratchpad
+    Key([mod], "s", lazy.group['scratchpad'].dropdown_toggle('term')),
+    Key([mod], "v", lazy.group['scratchpad'].dropdown_toggle('vim')),
+    Key([mod], "c", lazy.group['scratchpad'].dropdown_toggle('clip')),
 ]
 
 # Add key bindings to switch VTs in Wayland.
@@ -158,6 +163,18 @@ for i in groups:
             #     desc="move focused window to group {}".format(i.name)),
         ]
     )
+
+
+# Add the ScratchPad group
+groups.append(
+    ScratchPad("scratchpad", [
+        DropDown("term", "alacritty", width=0.4, height=0.7, x=0.3, y=0.15),
+        DropDown("vim", "alacritty -e nvim", width=0.4, height=0.7, x=0.3, y=0.15),
+        DropDown("clip", "alacritty -e /home/conny/Documents/xclip-manager/xseltui.py", width=0.4, height=0.3, x=0.3, y=0.4),
+    ])
+)
+
+
 
 layout_defaults = dict(
     border_focus=["#888"],
