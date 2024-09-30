@@ -31,11 +31,20 @@
 # \___\_\__/_/_/\___/  /_____/   \__,_/  / .___/   \__/   \____/  / .___/
 #                                       /_/                      /_/
 
+import os
+import datetime
+
 from libqtile import bar, layout, qtile, widget
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
-from libqtile.scripts.main import VERSION
+
+
+def set_date_to_clipboard(foo):
+    # Get today's date in the desired format (YYYY-MM-DD_)
+    today_date = datetime.datetime.now().strftime("%Y-%m-%d_")
+    # Copy the date to the clipboard using xsel
+    os.system(f"echo -n '{today_date}' | xsel -ib")
+
 
 mod = "mod4"
 # terminal = guess_terminal()
@@ -56,6 +65,9 @@ keys = [
 
     # Toggle bar
     Key([mod], "b", lazy.hide_show_bar(), desc="Toggles the bar"),
+
+    # Paste todays date
+    Key([mod], "d", lazy.function(set_date_to_clipboard), desc="Set todays date to clipboard"),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
@@ -110,6 +122,11 @@ keys = [
     Key([], "XF86AudioMute", lazy.spawn("pamixer -t")),
     Key([], "XF86AudioLowerVolume", lazy.spawn("pamixer -d 10")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("pamixer -i 10")),
+
+    # Scratchpad
+    Key([mod], "s", lazy.group['scratchpad'].dropdown_toggle('term')),
+    Key([mod], "v", lazy.group['scratchpad'].dropdown_toggle('vim')),
+    Key([mod], "c", lazy.group['scratchpad'].dropdown_toggle('clip')),
 ]
 
 # Add key bindings to switch VTs in Wayland.
@@ -152,12 +169,23 @@ for i in groups:
         ]
     )
 
+
+# Add the ScratchPad group
+groups.append(
+    ScratchPad("scratchpad", [
+        DropDown("term", "alacritty", width=0.4, height=0.7, x=0.3, y=0.15),
+        DropDown("vim", "alacritty -e nvim", width=0.4, height=0.7, x=0.3, y=0.15),
+        DropDown("clip", "alacritty -e /home/conny/Documents/xclip-manager/xseltui.py", width=0.4, height=0.3, x=0.3, y=0.4),
+    ])
+)
+
+
 layout_defaults = dict(
     border_focus=["#bbb"],
     border_normal=["#111", "#222"],
     border_focus_stack=["#ddd"],
     border_width=2,
-    margin=0
+    margin=60
 )
 
 layouts = [
@@ -187,7 +215,7 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        wallpaper="/home/conny/.config/qtile/fräv-3840x2557.png",
+        wallpaper="/home/conny/.config/qtile/tiles1_laptop.png",
         wallpaper_mode="fill",
         bottom=bar.Bar(
             [
