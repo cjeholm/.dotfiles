@@ -24,6 +24,13 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+#    ____  __  _ __        __                         __
+#   / __ \/ /_(_) /__     / /      ____ _   ____     / /_   ____     ____
+#  / / / / __/ / / _ \   / /      / __ `/  / __ \   / __/  / __ \   / __ \
+# / /_/ / /_/ / /  __/  / /___   / /_/ /  / /_/ /  / /_   / /_/ /  / /_/ /
+# \___\_\__/_/_/\___/  /_____/   \__,_/  / .___/   \__/   \____/  / .___/
+#                                       /_/                      /_/
+
 from libqtile import bar, layout, qtile, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy

@@ -1,4 +1,4 @@
-# Copyright (c) 2010 Aldo Cortesi
+# Copyright (c) 2010 Aldo Cortes
 # Copyright (c) 2010, 2014 dequis
 # Copyright (c) 2012 Randall Ma
 # Copyright (c) 2012-2014 Tycho Andersen
@@ -23,6 +23,13 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+
+#    ____  __  _ __        ____                     __      __
+#   / __ \/ /_(_) /__     / __ \   ___     _____   / /__   / /_   ____     ____
+#  / / / / __/ / / _ \   / / / /  / _ \   / ___/  / //_/  / __/  / __ \   / __ \
+# / /_/ / /_/ / /  __/  / /_/ /  /  __/  (__  )  / ,<    / /_   / /_/ /  / /_/ /
+# \___\_\__/_/_/\___/  /_____/   \___/  /____/  /_/|_|   \__/   \____/  / .___/
+#                                                                      /_/i
 
 import os
 import datetime
