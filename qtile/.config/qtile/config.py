@@ -175,7 +175,7 @@ groups.append(
     ScratchPad("scratchpad", [
         DropDown("term", "alacritty", width=0.4, height=0.7, x=0.3, y=0.15),
         DropDown("vim", "alacritty -e nvim", width=0.4, height=0.7, x=0.3, y=0.15),
-        DropDown("clip", "alacritty -e /home/conny/Documents/xclip-manager/xseltui.py", width=0.4, height=0.3, x=0.3, y=0.4),
+        DropDown("clip", "alacritty -e /home/conny/Documents/xseltui/xseltui.py", width=0.4, height=0.3, x=0.3, y=0.4),
     ])
 )
 
@@ -319,5 +319,5 @@ wl_input_rules = None
 #
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
-# wmname = "LG3D"
-wmname = f"Qtile {VERSION}"
+wmname = "LG3D"
+# wmname = f"Qtile {VERSION}"
