@@ -34,10 +34,13 @@
 import os
 import datetime
 
-from libqtile import bar, layout, qtile, widget
+from libqtile import bar, layout, qtile, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown
 from libqtile.lazy import lazy
 
+@hook.subscribe.startup_once
+def autostart():
+    os.system("dunst -config ~/.config/dunst/dunstrc &")
 
 def set_date_to_clipboard(foo):
     # Get today's date in the desired format (YYYY-MM-DD_)
@@ -240,8 +243,8 @@ screens = [
                 widget.Battery(fmt="Bat {}", discharge_char="\U00002193", charge_char="\U00002191"),
                 widget.TextBox("\U00002022", name="Unicide Dot"),
                 widget.Wlan(interface="wlp1s0"),
-                widget.TextBox("\U00002022", name="Unicide Dot"),
-                widget.Net(interface="tun0"),
+                #widget.TextBox("\U00002022", name="Unicide Dot"),
+                #widget.Net(interface="tun0"),
                 widget.TextBox("\U00002022", name="Unicide Dot"),
                 widget.Bluetooth(interface="hci0"),
                 # widget.TextBox("🐹", name="Hamster"),
