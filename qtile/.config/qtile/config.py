@@ -45,6 +45,7 @@ def set_date_to_clipboard(foo):
     # Copy the date to the clipboard using xsel
     os.system(f"echo -n '{today_date}' | xsel -ib")
 
+lazy.spawn("dunst")
 
 mod = "mod4"
 # terminal = guess_terminal()
