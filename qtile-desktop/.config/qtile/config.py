@@ -132,6 +132,10 @@ keys = [
     Key([mod], "s", lazy.group['scratchpad'].dropdown_toggle('term')),
     Key([mod], "v", lazy.group['scratchpad'].dropdown_toggle('vim')),
     Key([mod], "c", lazy.group['scratchpad'].dropdown_toggle('clip')),
+
+    # Notifications
+    Key([mod], "n", lazy.spawn("dunstctl close-all")),
+
 ]
 
 # Add key bindings to switch VTs in Wayland.
