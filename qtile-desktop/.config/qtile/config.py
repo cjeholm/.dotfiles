@@ -135,6 +135,7 @@ keys = [
 
     # Notifications
     Key([mod], "n", lazy.spawn("dunstctl close-all")),
+    Key([mod], "p", lazy.spawn("dunstctl history-pop")),
 
 ]
 

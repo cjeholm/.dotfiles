@@ -133,6 +133,7 @@ keys = [
 
     # Notifications
     Key([mod], "n", lazy.spawn("dunstctl close-all")),
+    Key([mod], "p", lazy.spawn("dunstctl history-pop")),
 ]
 
 # Add key bindings to switch VTs in Wayland.
