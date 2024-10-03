@@ -3,3 +3,4 @@ lazy-lock.json
 *.old
 *.luarc.json
 *.pyc
+__pycache__
