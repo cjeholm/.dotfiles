@@ -166,7 +166,7 @@ for i in groups:
             Key(
                 [mod, "shift"],
                 i.name,
-                lazy.window.togroup(i.name, switch_group=True),
+                lazy.window.togroup(i.name, switch_group=False),
                 desc="Switch to & move focused window to group {}".format(i.name),
             ),
             # Or, use below if you prefer not to switch to that group.
@@ -244,11 +244,11 @@ screens = [
                 # widget.Backlight(),
                 widget.PulseVolume(fmt='Vol {}'),
                 widget.TextBox("\U00002022", name="Unicide Dot"),
-                widget.Battery(fmt="Bat {}", discharge_char="\U00002193", charge_char="\U00002191"),
+                widget.Battery(fmt="Bat {}", notify_below=10, discharge_char="\U00002193", charge_char="\U00002191"),
                 widget.TextBox("\U00002022", name="Unicide Dot"),
                 widget.Wlan(interface="wlp1s0"),
-                #widget.TextBox("\U00002022", name="Unicide Dot"),
-                #widget.Net(interface="tun0"),
+                widget.TextBox("\U00002022", name="Unicide Dot"),
+                widget.Net(interface="tun0"),
                 widget.TextBox("\U00002022", name="Unicide Dot"),
                 widget.Bluetooth(interface="hci0"),
                 # widget.TextBox("🐹", name="Hamster"),
