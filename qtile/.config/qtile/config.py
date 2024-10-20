@@ -180,9 +180,9 @@ for i in groups:
 # Add the ScratchPad group
 groups.append(
     ScratchPad("scratchpad", [
-        DropDown("term", "alacritty", width=0.4, height=0.7, x=0.3, y=0.15),
-        DropDown("vim", "alacritty -e nvim", width=0.4, height=0.7, x=0.3, y=0.15),
-        DropDown("clip", "alacritty -e /home/conny/Documents/xseltui/xseltui.py", width=0.4, height=0.3, x=0.3, y=0.4),
+        DropDown("term", "kitty", width=0.4, height=0.7, x=0.3, y=0.15),
+        DropDown("vim", "kitty -e nvim", width=0.4, height=0.7, x=0.3, y=0.15),
+        DropDown("clip", "kitty -e /home/conny/Documents/xseltui/xseltui.py", width=0.4, height=0.3, x=0.3, y=0.4),
     ])
 )
 
