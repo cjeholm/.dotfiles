@@ -59,7 +59,7 @@ def read_sek_kwh_file():
 
 
 mod = "mod4"
-terminal = "alacritty"
+terminal = "kitty"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
