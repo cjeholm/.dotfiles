@@ -25,6 +25,28 @@ return {
         capabilities = capabilities
       })
 
+      require("lspconfig").nixd.setup({
+        cmd = { "nixd" },
+        settings = {
+          nixd = {
+            nixpkgs = {
+              expr = "import <nixpkgs> { }",
+            },
+            formatting = {
+              command = { "alejandra" }, -- or nixfmt or nixpkgs-fmt
+            },
+            -- options = {
+            --   nixos = {
+            --       expr = '(builtins.getFlake "/PATH/TO/FLAKE").nixosConfigurations.CONFIGNAME.options',
+            --   },
+            --   home_manager = {
+            --       expr = '(builtins.getFlake "/PATH/TO/FLAKE").homeConfigurations.CONFIGNAME.options',
+            --   },
+            -- },
+          },
+        },
+      })
+
       -- Global mappings.
       -- See `:help vim.diagnostic.*` for documentation on any of the below functions
       vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, { desc = "Open Diagnostics" })
