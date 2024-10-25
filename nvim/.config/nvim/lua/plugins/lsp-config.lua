@@ -24,6 +24,9 @@ return {
       lspconfig.clangd.setup({
         capabilities = capabilities
       })
+      lspconfig.marksman.setup({
+        capabilities = capabilities
+      })
 
       require("lspconfig").nixd.setup({
         cmd = { "nixd" },
