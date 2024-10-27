@@ -113,6 +113,7 @@ keys = [
     Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
     # Key([mod, "shift"], "t", lazy.function(lambda qtile: qtile.current_window.cmd_set_position_floating(0, 0), qtile.current_window.cmd_set_size_floating(1920, 1080)), desc="Set specific size"),
     Key([mod, "shift"], "t", lazy.window.set_size_floating(1920, 1080), lazy.window.set_position_floating(0, 0)),
+    Key([mod, "control"], "t", lazy.window.set_size_floating(800, 600), lazy.window.set_position_floating(1930, 0)),
 
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "mod1"], "r", lazy.restart(), desc="Restart qtile"),
