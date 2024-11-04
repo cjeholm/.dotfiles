@@ -1,4 +1,4 @@
-shell = "fish"
+terminal.shell = "fish"
 
 [font]
 # normal = { family = "0xProto Nerd Font Mono", style = "Regular"}

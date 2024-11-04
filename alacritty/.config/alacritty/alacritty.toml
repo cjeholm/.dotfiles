@@ -1,4 +1,4 @@
-shell = "fish"
+terminal.shell = "fish"
 
 [font]
 # normal = { family = "Iosevka NFM Medium", style = "Regular"}
