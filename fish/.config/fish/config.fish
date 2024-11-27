@@ -1,7 +1,7 @@
-function fish_greeting
-    echo Welcome to ROBCO Industries \(TM\) Termlink
-    echo The time is (set_color yellow; date +%T;set_color normal) and this machine is called $hostname
-end
+#function fish_greeting
+#    echo Welcome to ROBCO Industries \(TM\) Termlink
+#    echo The time is (set_color yellow; date +%T;set_color normal) and this machine is called $hostname
+#end
 
 
 function fish_user_key_bindings
