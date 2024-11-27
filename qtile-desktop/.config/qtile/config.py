@@ -41,6 +41,7 @@ from libqtile.lazy import lazy
 @hook.subscribe.startup_once
 def autostart():
     os.system("dunst -config ~/.config/dunst/dunstrc &")
+    os.system("xsetwacom --set 27 Touch off")
 
 def set_date_to_clipboard(foo):
     # Get today's date in the desired format (YYYY-MM-DD_)
