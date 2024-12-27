@@ -194,7 +194,7 @@ layout_defaults = dict(
     border_normal=["#111", "#222"],
     border_focus_stack=["#ddd"],
     border_width=2,
-    margin=60
+    margin=20
 )
 
 layouts = [
