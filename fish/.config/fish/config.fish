@@ -20,9 +20,11 @@ alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 alias neofetch='fastfetch'
 alias wifi=nmtui
 alias dng='WINEPREFIX="$HOME/wine-dng" wine "$HOME/wine-dng/drive_c/Program Files/Adobe/Adobe DNG Converter/Adobe DNG Converter.exe"'
-alias nv='steam-run nvim'
 alias so='source ~/.config/fish/config.fish'
 alias bat='bat --theme=ansi'
+
+# photo edit automations
+alias korkort='~/.dotfiles/scripts/korkort.sh'
 
 # ls / eza
 alias tree='eza --tree --icons --group-directories-first'
