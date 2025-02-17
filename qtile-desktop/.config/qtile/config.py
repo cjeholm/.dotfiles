@@ -190,7 +190,7 @@ groups.append(
         DropDown("term", "kitty", width=0.4, height=0.7, x=0.3, y=0.15),
         DropDown("vim", "kitty -e nvim", width=0.4, height=0.7, x=0.3, y=0.15),
         DropDown("yazi", "kitty -e yazi", width=0.4, height=0.7, x=0.3, y=0.15),
-        DropDown("clip", "kitty -e /home/conny/Documents/xclip-manager/xseltui.py", width=0.4, height=0.3, x=0.3, y=0.4),
+        DropDown("clip", "kitty -e /home/conny/Documents/python/xclip-manager/xseltui.py", width=0.4, height=0.3, x=0.3, y=0.4),
     ])
 )
 
