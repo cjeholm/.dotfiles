@@ -3,6 +3,6 @@ return {
 	config = function()
 		require("findbacklinks")
 	end,
-	lazy = true,
+	lazy = false,
 	vim.keymap.set("n", "gb", "<cmd>FindBacklinks<cr>", { desc = "Find Backlinks" }),
 }
