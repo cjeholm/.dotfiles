@@ -6,5 +6,4 @@ show_hidden = false
 [plugin]
 prepend_previewers = [
 	{ mime = "image/tiff", run = "magick" },
-	{ mime = "image/dng", run = "magick" },
 ]
