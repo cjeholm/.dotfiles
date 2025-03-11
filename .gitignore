@@ -4,3 +4,4 @@ lazy-lock.json
 *.luarc.json
 *.pyc
 __pycache__
+fish_variables
