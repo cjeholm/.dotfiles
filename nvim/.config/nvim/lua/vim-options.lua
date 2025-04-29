@@ -77,3 +77,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+
+vim.lsp.set_log_level("WARN")
+
