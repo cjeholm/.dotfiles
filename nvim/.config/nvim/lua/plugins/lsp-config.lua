@@ -27,7 +27,9 @@ return {
       lspconfig.marksman.setup({
         capabilities = capabilities,
       })
-
+      lspconfig.rust_analyzer.setup({
+        capabilities = capabilities,
+      })
       require("lspconfig").nixd.setup({
         cmd = { "nixd" },
         settings = {
