@@ -27,35 +27,6 @@ return {
       lspconfig.marksman.setup({
         capabilities = capabilities,
       })
-      -- lspconfig.rust_analyzer.setup({
-      --   capabilities = capabilities
-      -- })
-
-      -- Example: Lazy.nvim or init.lua setup
-      require("lspconfig").rust_analyzer.setup({
-        settings = {
-          ["rust-analyzer"] = {
-            cargo = { allFeatures = true },
-            checkOnSave = { command = "clippy" },
-            inlayHints = {
-              enable = true,  -- enable the hints
-              typeHints = true, -- type annotations
-              parameterHints = true, -- function param hints
-              chainingHints = true, -- method chain hints
-            },
-          },
-        },
-      })
-
-      vim.lsp.inlay_hint.enable(true)
-
-      -- Autoformat on save
-      -- vim.api.nvim_create_autocmd("BufWritePre", {
-      -- 	pattern = "*.rs",
-      -- 	callback = function()
-      -- 		vim.lsp.buf.format({ async = false })
-      -- 	end,
-      -- })
 
       require("lspconfig").nixd.setup({
         cmd = { "nixd" },
