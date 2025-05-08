@@ -35,4 +35,4 @@ require("vim-options")
 require("lazy").setup("plugins")
 
 -- Color override
-vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "#8888aa", bg = "NONE", italic = true })
+vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "#555577", bg = "NONE", italic = true })
