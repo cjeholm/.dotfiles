@@ -51,7 +51,8 @@ def set_date_to_clipboard(foo):
 
 mod = "mod4"
 # terminal = guess_terminal()
-terminal = "alacritty"
+# terminal = "alacritty"
+terminal = "kitty"
 # terminal = "konsole"
 
 keys = [
