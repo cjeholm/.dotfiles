@@ -2,7 +2,7 @@
 
 # ya pack -a boydaihungst/mediainfo
 
-[mgr]
+[manager]
 show_hidden = false
 
 # [plugin]
