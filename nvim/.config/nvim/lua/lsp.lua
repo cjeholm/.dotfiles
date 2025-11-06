@@ -170,3 +170,33 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = b.buffer, desc = "Hover documentation" })
   end,
 })
+-- Auto‑start Marksman LSP for Markdown (using up‑to‑date API)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    local buf = vim.api.nvim_get_current_buf()
+    local marksman_running = false
+
+    for _, client in pairs(vim.lsp.get_clients()) do
+      if client.name == "marksman" then
+        -- Check if the client is attached to the current buffer
+        if client.attached_buffers and vim.tbl_contains(client.attached_buffers, buf) then
+          marksman_running = true
+          break
+        end
+      end
+    end
+
+    if not marksman_running then
+      vim.lsp.start({
+        name = "marksman",
+        cmd = { "marksman", "server" },
+        filetypes = { "markdown" },
+        root_dir = function(fname)
+          local root = vim.fs.find({ ".marksman.json", ".git" }, { upward = true, path = fname })[1]
+          return root and vim.fs.dirname(root) or vim.fs.dirname(fname)
+        end,
+      })
+    end
+  end,
+})
