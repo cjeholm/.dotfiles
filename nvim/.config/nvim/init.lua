@@ -33,6 +33,9 @@ require("vim-options")
 -- Plugins are listed in lua/plugins.lua
 -- and in dir lua/plugins/
 require("lazy").setup("plugins")
+require("lsp")
+
+-- table.concat(vim.tbl_map(function(c) return c.name end, vim.lsp.get_clients({bufnr=0})), ", ")
 
 -- Color override
 vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "#555577", bg = "NONE", italic = true })
