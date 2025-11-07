@@ -106,13 +106,23 @@ setup_lsp("nixd", {
 })
 
 -- Marksman LSP
-setup_lsp("marksman", {
-  cmd = { "marksman", "server" },
-  filetypes = { "markdown" },
-  root_dir = function(fname)
-    -- look for .marksman.json or .git, fallback to folder of the file
-    local root = vim.fs.find({ ".marksman.json", ".git" }, { upward = true, path = fname })[1]
-    return root and vim.fs.dirname(root) or vim.fs.dirname(fname)
+-- Start Marksman manually using Neovim's built-in LSP client
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    local bufname = vim.api.nvim_buf_get_name(0)
+    local root = vim.fs.root(bufname, { ".marksman.toml", ".git" }) or vim.fn.getcwd()
+
+    vim.lsp.start({
+      name = "marksman",
+      cmd = { "marksman", "server" },
+      root_dir = root,
+      capabilities = (function()
+        local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+        return ok and cmp_nvim_lsp.default_capabilities() or vim.lsp.protocol.make_client_capabilities()
+      end)(),
+      filetypes = { "markdown" },
+    })
   end,
 })
 
@@ -157,17 +167,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<space>r", vim.lsp.buf.rename, { buffer = b.buffer, desc = "Rename symbol" })
     vim.keymap.set({ "n", "v" }, "<space>a", vim.lsp.buf.code_action, { buffer = b.buffer, desc = "Code action" })
     vim.keymap.set("n", "gl", vim.lsp.buf.references, { buffer = b.buffer, desc = "List references" })
-    -- optional hover
     vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = b.buffer, desc = "Hover documentation" })
-    -- optional format
-    -- vim.keymap.set("n", "<space>f", function()
-    --   vim.lsp.buf.format({ async = true })
-    -- end, { buffer = b.buffer, desc = "Format buffer" })
-
-    -- Only set this for markdown buffers
-    if vim.bo[ev.buf].filetype == "markdown" then
-      -- Follow [[link]] under cursor
-      vim.keymap.set("n", "gf", vim.lsp.buf.definition, { buffer = ev.buf, desc = "Follow [[link]]" })
-    end
   end,
 })
