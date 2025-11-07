@@ -14,6 +14,7 @@ return {
       require("mini.pairs").setup()
       require("mini.indentscope").setup()
       require("mini.statusline").setup()
+      -- require("mini.animate").setup()
 
       local miniclue = require("mini.clue")
       miniclue.setup({
