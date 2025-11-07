@@ -8,7 +8,6 @@
 -- binary packages with nix. Mason will not work
 -- on NixOs and is excluded from this configuration.
 
-
 -- PACKAGE MANAGER
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -23,10 +22,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
 -- LOAD OPTIONS
 require("vim-options")
-
 
 -- LOAD LAZY
 -- Update with :Lazy
@@ -39,6 +36,11 @@ require("lsp")
 
 -- LOAD FUNCTIONS
 require("functions")
+
+-- LOAD MINI NVIM STUFF
+require("mini.ai").setup()
+require("mini.surround").setup()
+-- require("mini.clue").setup()
 
 -- table.concat(vim.tbl_map(function(c) return c.name end, vim.lsp.get_clients({bufnr=0})), ", ")
 
