@@ -37,10 +37,6 @@ require("lsp")
 -- LOAD FUNCTIONS
 require("functions")
 
--- LOAD MINI NVIM STUFF
-require("mini.ai").setup()
-require("mini.surround").setup()
--- require("mini.clue").setup()
 
 -- table.concat(vim.tbl_map(function(c) return c.name end, vim.lsp.get_clients({bufnr=0})), ", ")
 
