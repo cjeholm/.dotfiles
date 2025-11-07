@@ -12,6 +12,8 @@ return {
       require("mini.icons").setup()
       require("mini.move").setup()  -- alt + hjkl
       require("mini.pairs").setup()
+      require("mini.indentscope").setup()
+      require("mini.statusline").setup()
 
       local miniclue = require("mini.clue")
       miniclue.setup({
