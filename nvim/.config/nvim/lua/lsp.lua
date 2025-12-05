@@ -10,7 +10,9 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local function setup_lsp(name, opts)
   opts = opts or {}
   local patterns = opts.filetypes
-  if type(patterns) == "string" then patterns = { patterns } end
+  if type(patterns) == "string" then
+    patterns = { patterns }
+  end
 
   vim.api.nvim_create_autocmd("FileType", {
     pattern = patterns,
@@ -104,15 +106,32 @@ setup_lsp("rust_analyzer", {
   filetypes = { "rust" },
   -- IMPORTANT: only detect proper Rust roots. DO NOT FALL BACK TO CWD.
   root_dir = function(fname)
-    local root = vim.fs.find({ "Cargo.toml", "rust-project.json" },
-      { upward = true, path = fname }
-    )[1]
+    local root = vim.fs.find({ "Cargo.toml", "rust-project.json" }, { upward = true, path = fname })[1]
     return root and vim.fs.dirname(root) or nil
   end,
   settings = {
     ["rust-analyzer"] = {
-      cargo = { allFeatures = true },
-      check = { command = "check" },
+      diagnostics = {
+        enable = true,
+        experimental = true,
+      },
+
+      cargo = {
+        allFeatures = true,
+        autoreload = true, -- IMPORTANT
+        buildScripts = {
+          enable = true,
+        },
+      },
+
+      procMacro = {
+        enable = true,
+      },
+
+      check = {
+        command = "clippy", -- optional but recommended
+  --     check = { command = "check" },
+      },
     },
   },
 })
