@@ -160,10 +160,19 @@ vim.api.nvim_create_autocmd("FileType", {
     local buf = vim.api.nvim_get_current_buf()
     local fname = vim.api.nvim_buf_get_name(buf)
 
+    -- skip buffers without real file paths
+    if fname == "" or vim.bo[buf].buftype ~= "" then
+      return
+    end
+
+    -- verify that file exists
+    if vim.fn.filereadable(fname) == 0 then
+      return
+    end
+
     local root = vim.fs.find({ ".marksman.toml", ".git" }, { upward = true, path = fname })[1]
     root = root and vim.fs.dirname(root) or vim.fs.dirname(fname)
 
-    -- reuse if exists
     for _, client in ipairs(vim.lsp.get_clients()) do
       if client.name == "marksman" and client.config.root_dir == root then
         vim.lsp.buf_attach_client(buf, client.id)
