@@ -15,12 +15,16 @@ show_hidden = false
     # Replace magick, image, video with mediainfo
     { mime = "{audio,video,image}/*", run = "mediainfo" },
     { mime = "application/subrip", run = "mediainfo" },
-  	{ mime = "image/tiff", run = "magick" },
+  	# { mime = "image/tiff", run = "magick" },
+    # DNG → extract embedded JPEG
+    { pattern = "*.{dng,DNG}", run = "exiftool -b -PreviewImage %1 > \"$YAZI_PREVIEW_PATH\"" },
   ]
   prepend_previewers = [
     # Replace magick, image, video with mediainfo
     # { mime = "{audio,video,image}/*", run = "mediainfo"},
     { mime = "application/subrip", run = "mediainfo" },
+    # DNG → extract embedded JPEG
+    { pattern = "*.{dng,DNG}", run = "exiftool -b -PreviewImage %1 > \"$YAZI_PREVIEW_PATH\"" },
   ]
   # There are more extensions which are supported by mediainfo.
   # Just add file's MIME type to `previewers`, `preloaders` above.
