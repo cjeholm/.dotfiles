@@ -231,7 +231,8 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        wallpaper="/home/conny/Pictures/blandat/themoon_3440x1440.png",
+        wallpaper="/home/conny/Documents/Work/AlteraSigillum/sigil2/sigil2-wallpaper/sigil2_21x9_ultrawide_3440x1440.jpg",
+        # wallpaper="/home/conny/Pictures/blandat/themoon_3440x1440.png",
         # wallpaper="/home/conny/.config/qtile/tiles1.png",
         # wallpaper="/home/conny/.config/qtile/nika1_3440x1440.png",
         wallpaper_mode="fill",
