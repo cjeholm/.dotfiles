@@ -254,12 +254,11 @@ screens = [
                 # widget.StatusNotifier(),
                 widget.Systray(),
                 # widget.Backlight(),
-                widget.GenPollText(
-                    func=read_sek_kwh_file,  # Function that reads the file
-                    update_interval=2,             # Update the widget every 2 seconds
-                    fmt="{}",                # Format the display text
-                ),
-                widget.TextBox("\U00002022", name="Unicide Dot"),
+                # widget.GenPollText(
+                #     func=read_sek_kwh_file,  # Function that reads the file
+                #     update_interval=2,             # Update the widget every 2 seconds
+                #     fmt="{}",                # Format the display text
+                # ),
                 widget.PulseVolume(fmt='Vol {}'),
                 widget.TextBox("\U00002022", name="Unicide Dot"),
                 widget.Bluetooth(interface="hci0"),
