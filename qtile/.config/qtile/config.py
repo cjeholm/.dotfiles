@@ -245,6 +245,8 @@ screens = [
                 # widget.StatusNotifier(),
                 widget.Systray(),
                 # widget.Backlight(),
+                widget.Memory(),
+                widget.TextBox("\U00002022", name="Unicide Dot"),
                 widget.PulseVolume(fmt='Vol {}'),
                 widget.TextBox("\U00002022", name="Unicide Dot"),
                 widget.Battery(fmt="Bat {}", notify_below=10, discharge_char="\U00002193", charge_char="\U00002191"),
