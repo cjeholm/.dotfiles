@@ -42,3 +42,12 @@ require("functions")
 
 -- Color override
 vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "#555577", bg = "NONE", italic = true })
+
+-- Highligt dates nicely in csv files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "csv",
+  callback = function()
+    vim.api.nvim_set_hl(0, "CsvDate", { link = "Constant" })
+    vim.fn.matchadd("CsvDate", [[\v\d{4}-\d{2}-\d{2}]])
+  end,
+})
