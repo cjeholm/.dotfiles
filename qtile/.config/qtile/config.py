@@ -33,6 +33,7 @@
 
 import os
 import datetime
+import subprocess
 
 from libqtile import bar, layout, qtile, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown
@@ -40,7 +41,14 @@ from libqtile.lazy import lazy
 
 @hook.subscribe.startup_once
 def autostart():
-    os.system("dunst -config ~/.config/dunst/dunstrc &")
+    commands = [
+        ["dunst", "-config", os.path.expanduser("~/.config/dunst/dunstrc")],
+        ["xsetroot", "-cursor_name", "left_ptr"],
+        ["gsettings", "set", "org.gnome.desktop.interface", "cursor-theme", "Bibata-Modern-Classic"],
+        ["gsettings", "set", "org.gnome.desktop.interface", "cursor-size", "32"],
+    ]
+    for cmd in commands:
+        subprocess.Popen(cmd)
 
 def set_date_to_clipboard(foo):
     # Get today's date in the desired format (YYYY-MM-DD_)
