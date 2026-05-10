@@ -70,6 +70,10 @@ keys = [
     # Toggle bar
     Key([mod], "b", lazy.hide_show_bar(), desc="Toggles the bar"),
 
+    # Monitor brighness
+    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
+
     # Paste todays date
     Key([mod], "d", lazy.function(set_date_to_clipboard), desc="Set todays date to clipboard"),
 
