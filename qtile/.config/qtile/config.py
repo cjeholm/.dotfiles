@@ -43,9 +43,9 @@ from libqtile.lazy import lazy
 def autostart():
     commands = [
         ["dunst", "-config", os.path.expanduser("~/.config/dunst/dunstrc")],
+        ["xinput", "set-prop", "MSFT0001:01 04F3:3095 Touchpad", "libinput Accel Speed", "0.5"],
         ["xsetroot", "-cursor_name", "left_ptr"],
         ["gsettings", "set", "org.gnome.desktop.interface", "cursor-theme", "Bibata-Modern-Classic"],
-        ["gsettings", "set", "org.gnome.desktop.interface", "cursor-size", "32"],
     ]
     for cmd in commands:
         subprocess.Popen(cmd)
