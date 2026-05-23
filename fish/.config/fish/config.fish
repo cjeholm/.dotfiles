@@ -19,7 +19,8 @@ alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 # alias neofetch='neofetch --ascii ~/.config/neofetch/pentagram.txt'
 alias neofetch='fastfetch'
 alias wifi=nmtui
-alias dng='WINEPREFIX="$HOME/wine-dng" wine "$HOME/wine-dng/drive_c/Program Files/Adobe/Adobe DNG Converter/Adobe DNG Converter.exe"'
+# alias dng='WINEPREFIX="$HOME/wine-dng" wine "$HOME/wine-dng/drive_c/Program Files/Adobe/Adobe DNG Converter/Adobe DNG Converter.exe"'
+alias dng='WINEPREFIX="$HOME/wine-prefixes/dng" wine "$HOME/wine-prefixes/dng/drive_c/Program Files/Adobe/Adobe DNG Converter/Adobe DNG Converter.exe"'
 alias so='source ~/.config/fish/config.fish'
 alias bat='bat --theme=ansi'
 
