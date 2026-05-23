@@ -53,6 +53,7 @@ end
 
 -- ===================== Servers ==========================
 
+
 -- Python
 setup_lsp("pylsp", {
   cmd = { "pylsp" },
