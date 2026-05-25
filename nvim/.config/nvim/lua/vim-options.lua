@@ -5,6 +5,15 @@ vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "gdscript", "gdshader" },
+  callback = function()
+    vim.bo.expandtab = false
+    vim.bo.tabstop = 4
+    vim.bo.shiftwidth = 4
+  end,
+})
+
 -- SET LINEBREAK
 vim.opt.linebreak = true
 
