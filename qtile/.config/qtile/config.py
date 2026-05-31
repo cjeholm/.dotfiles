@@ -46,6 +46,8 @@ def autostart():
         ["xinput", "set-prop", "MSFT0001:01 04F3:3095 Touchpad", "libinput Accel Speed", "0.5"],
         ["xsetroot", "-cursor_name", "left_ptr"],
         ["gsettings", "set", "org.gnome.desktop.interface", "cursor-theme", "Bibata-Modern-Classic"],
+        ["xset", "s", "off"],        # disable screensaver
+        ["xset", "-dpms"],           # disable DPMS entirely
     ]
     for cmd in commands:
         subprocess.Popen(cmd)
