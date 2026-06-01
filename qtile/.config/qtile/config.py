@@ -39,6 +39,8 @@ from libqtile import bar, layout, qtile, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown
 from libqtile.lazy import lazy
 
+os.environ["QT_SCALE_FACTOR"] = "2.0"
+
 @hook.subscribe.startup_once
 def autostart():
     commands = [
